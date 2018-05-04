@@ -20,10 +20,11 @@ public class Arquivo {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+	
 		while(entrada.hasNextLine()) {
 			
 			linha.add(entrada.nextLine());
+
 		}
 		
 		entrada.close();

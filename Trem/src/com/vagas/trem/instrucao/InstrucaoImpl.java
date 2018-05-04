@@ -14,14 +14,18 @@ public class InstrucaoImpl {
 	}
 	
 	
-	public List<String> getInstrucoes(){
-		List<String>instrucoes = new ArrayList<String>();
+	public List<Instrucao> getInstrucoes(){
+		List<Instrucao>instrucoes = new ArrayList<Instrucao>();
 		
 		for(String comando : comandos) {
 			
+			Instrucao linhaInstrucao = getComandoLinhas(comando);
 			
+			if(linhaInstrucao != null)
+				instrucoes.add((linhaInstrucao) );
 		}
-
+		
+		return instrucoes;
 	}
 	
 	
@@ -36,12 +40,14 @@ public class InstrucaoImpl {
 			linhaComando = new Grafico(linha);
 		} else if(comando.toUpperCase().equals("DISTANCIA")) {
 			linhaComando = new DistanciaViagem(linha);
-		} else if(comando.toUpperCase().equals("ESTATISTICA_ROTA")) {
+		} else if(comando.toUpperCase().equals("ANALISE_ROTA")) {
 			linhaComando = new AnaliseRota(linha);
 		} else if(comando.toUpperCase().equals("VIAGEM_CURTA")) {
 			linhaComando = new ViagemCurta(linha);
-		}
-		
+		}else {
+            System.out.println("Comando: " + comando + " não existe");
+        }
+
 		return linhaComando;
 	}
 	

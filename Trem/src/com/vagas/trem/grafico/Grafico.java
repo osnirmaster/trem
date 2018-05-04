@@ -1,5 +1,7 @@
 package com.vagas.trem.grafico;
 
+import java.util.List;
+
 import com.vagas.trem.instrucao.Instrucao;
 
 public class Grafico implements Instrucao {
@@ -19,5 +21,17 @@ public class Grafico implements Instrucao {
 	public void setInstrucao(String instrucao) {
 		this.instrucao = instrucao;
 	}
+	
+	@Override
+	public void processarInstrucao() {
+		
+		System.out.println(instrucao);
+	}
+	
+	public List getEstacoes() {
+		
+		
+	}
+
 
 }

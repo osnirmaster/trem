@@ -1,7 +1,10 @@
 package com.vagas.trem;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import com.vagas.trem.instrucao.Instrucao;
+import com.vagas.trem.instrucao.InstrucaoImpl;
 import com.vagas.trem.util.Arquivo;
 
 public class EstacaoTrem {
@@ -11,13 +14,15 @@ public class EstacaoTrem {
 		
 		Arquivo arquivo = new Arquivo();
 		
-		List<String> comandos = arquivo.getComandos();
+		List<String> linhas = new ArrayList<String>(arquivo.getComandos()) ;
+		InstrucaoImpl instrucoes = new InstrucaoImpl(linhas);
 		
-		for(String comando : comandos) {
+		List<Instrucao> comandos = instrucoes.getInstrucoes();
+	
+		for(Instrucao comando : comandos) {
 			
-			int indice = comando.indexOf(":");
-			System.out.println(comando.substring(0,indice));
-//			System.out.println(comando);
+			comando.processarInstrucao();
+
 		}
 
 	}
