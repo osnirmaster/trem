@@ -11,7 +11,7 @@ public class Grafico implements Instrucao {
 	
 	private static String instrucao;
 	private static String titulo ;
-	private static String[] bordas;
+	private static String[] grafico;
 	
 	public Grafico(String instrucao) {
 		
@@ -31,12 +31,19 @@ public class Grafico implements Instrucao {
 		System.out.println(instrucao);
 	}
 	
-	public static List getBordas() {
+	public static List<String> getGrafico() {
 		
 		titulo = instrucao.substring(0, instrucao.indexOf(":")) ;
-		bordas = instrucao.substring(instrucao.indexOf(":") + 1).split(",") ;
+		grafico = instrucao.substring(instrucao.indexOf(":") + 1).replaceAll(" ", "").trim().split(",") ;
 		
-		List colecaoBordas = new ArrayList(Arrays.asList(bordas));
+		List<String> bordas = new ArrayList<String>();
+		
+		for(int i = 0; i <= grafico.length; i++) {
+			
+			bordas.add(grafico[i].toString());
+		}
+		
+		List colecaoBordas = new ArrayList(bordas);
 		
 		return colecaoBordas;
 	}

@@ -14,6 +14,7 @@ public class DistanciaViagem implements Instrucao{
 	public void processarInstrucao() {
 		// TODO Auto-generated method stub
 		
+		System.out.println(Grafico.getGrafico());
 		System.out.println("Linha: " + instrucao);	
 		
 	}
