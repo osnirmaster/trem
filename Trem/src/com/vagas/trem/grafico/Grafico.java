@@ -1,5 +1,7 @@
 package com.vagas.trem.grafico;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.vagas.trem.instrucao.Instrucao;
@@ -7,7 +9,9 @@ import com.vagas.trem.instrucao.Instrucao;
 public class Grafico implements Instrucao {
 	
 	
-	private String instrucao;
+	private static String instrucao;
+	private static String titulo ;
+	private static String[] bordas;
 	
 	public Grafico(String instrucao) {
 		
@@ -22,15 +26,19 @@ public class Grafico implements Instrucao {
 		this.instrucao = instrucao;
 	}
 	
-	@Override
 	public void processarInstrucao() {
 		
 		System.out.println(instrucao);
 	}
 	
-	public List getEstacoes() {
+	public static List getBordas() {
 		
+		titulo = instrucao.substring(0, instrucao.indexOf(":")) ;
+		bordas = instrucao.substring(instrucao.indexOf(":") + 1).split(",") ;
 		
+		List colecaoBordas = new ArrayList(Arrays.asList(bordas));
+		
+		return colecaoBordas;
 	}
 
 

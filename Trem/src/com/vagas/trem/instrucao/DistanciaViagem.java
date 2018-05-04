@@ -1,5 +1,7 @@
 package com.vagas.trem.instrucao;
 
+import com.vagas.trem.grafico.Grafico;
+
 public class DistanciaViagem implements Instrucao{
 	
 	private String instrucao;
@@ -9,9 +11,9 @@ public class DistanciaViagem implements Instrucao{
 		this.instrucao = instrucao;
 	}
 
-	@Override
 	public void processarInstrucao() {
 		// TODO Auto-generated method stub
+		
 		System.out.println("Linha: " + instrucao);	
 		
 	}

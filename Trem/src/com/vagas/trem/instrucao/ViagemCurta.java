@@ -10,10 +10,9 @@ public class ViagemCurta implements Instrucao {
 		this.instrucao = instrucao;
 	}
 
-	@Override
 	public void processarInstrucao() {
 		// TODO Auto-generated method stub
-		System.out.println("Linha: " + instrucao);
+		
 	}
 
 }
