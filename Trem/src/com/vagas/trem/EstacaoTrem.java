@@ -6,6 +6,7 @@ import java.util.List;
 import com.vagas.trem.instrucao.Instrucao;
 import com.vagas.trem.instrucao.InstrucaoImpl;
 import com.vagas.trem.util.Arquivo;
+import com.vagas.trem.util.ParNaoEncontradoException;
 
 public class EstacaoTrem {
 
@@ -21,10 +22,7 @@ public class EstacaoTrem {
 	
 		for(Instrucao comando : comandos) {
 			
-			comando.processarInstrucao();
-
+				comando.processarInstrucao();
 		}
-
 	}
-
 }

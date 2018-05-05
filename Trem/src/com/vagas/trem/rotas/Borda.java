@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.vagas.trem.grafico.Grafico;
+import com.vagas.trem.instrucao.Instrucao;
 
 public class Borda {
 
@@ -11,20 +12,21 @@ public class Borda {
 	private static String fim;
 	private static int peso;
 	private static List bordas;
-	private static List<RoteiroBorda> pares;
+//	private static List<RoteiroBorda> pares;
 	
-	public List<RoteiroBorda> getBordas() {
+	public static List<RoteiroBorda> getBordas() {
 		
 		ArrayList<String> graficos = new ArrayList(Grafico.getGrafico()) ;
-		RoteiroBorda borda = null;
+		List<RoteiroBorda>pares = new ArrayList<RoteiroBorda>();
 		
 		for(String grafico : graficos) {
-			
-			pares.add(new RoteiroBorda(grafico.substring(0),
-							 grafico.substring(1), 
-							 Integer.valueOf(grafico.substring(2))));
-		}
-		
+	
+			RoteiroBorda roteiro = new RoteiroBorda(grafico.substring(0,1),
+					   									grafico.substring(1,2), 
+					   									Integer.valueOf(grafico.substring(2,3)));
+			if(roteiro != null)		
+				pares.add(roteiro);
+		}		
 		return pares;
 		
 	}

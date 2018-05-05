@@ -38,9 +38,10 @@ public class Grafico implements Instrucao {
 		
 		List<String> bordas = new ArrayList<String>();
 		
-		for(int i = 0; i <= grafico.length; i++) {
+		for(int i = 0; i < grafico.length; i++) {
 			
-			bordas.add(grafico[i].toString());
+			if(grafico[i] != null)
+				bordas.add(grafico[i].toString());
 		}
 		
 		List colecaoBordas = new ArrayList(bordas);
